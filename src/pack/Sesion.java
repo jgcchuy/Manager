@@ -119,7 +119,7 @@ public class Sesion extends javax.swing.JFrame {
         String contra = password.getText();
         String data = user+contra;
 
-        String ruta = "src/pack/"+data;
+        String ruta = "src/pack/usuarios"+data;
         
         File archivo = new File(ruta);
 

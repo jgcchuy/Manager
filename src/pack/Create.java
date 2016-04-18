@@ -36,6 +36,8 @@ public class Create extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         password = new javax.swing.JTextField();
         back = new javax.swing.JButton();
+        jLabel3 = new javax.swing.JLabel();
+        name = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -57,6 +59,8 @@ public class Create extends javax.swing.JFrame {
             }
         });
 
+        jLabel3.setText("Nombre");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -67,14 +71,17 @@ public class Create extends javax.swing.JFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(back))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(58, 58, 58)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(58, 58, 58)
+                                .addComponent(jLabel3)
+                                .addGap(44, 44, 44)
+                                .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel1)
                                 .addGap(27, 27, 27)
-                                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(usuario, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(78, 78, 78)
                                 .addComponent(jLabel2)
                                 .addGap(27, 27, 27)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -88,7 +95,11 @@ public class Create extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(back)
-                .addGap(76, 76, 76)
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel3)
+                    .addComponent(name, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(29, 29, 29)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -107,30 +118,40 @@ public class Create extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        String datos3 = name.getText();
         String datos = usuario.getText();
         String datos2 = password.getText();
-        String user = datos+datos2;
-        String ruta = "src/pack/";
+
+        Usuario usuarioNuevo = new Usuario(datos, datos2, datos3);
+        String user = datos + datos2;
+        String ruta = "src/pack/usuarios";
 
         File archivo = new File(ruta, user);
-        try {
-            
-            archivo.createNewFile();
-            FileWriter fw = new FileWriter(archivo);
-            PrintWriter pw = new PrintWriter(fw);
-           pw.write(datos2);
-            
-            fw.close();
-            pw.close();
-            
-            JOptionPane.showMessageDialog(null, "Se ha creado su usuario correctamente", "Chuy Messenger", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/pack/verde.png") );
-            
-        } catch (IOException ex) {
-            JOptionPane.showMessageDialog(null, "Ha ocurrio un error al crear el nuevo usuario", "Chuy Messenger", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pack/tachado.png") );
+
+        if (archivo.exists()) {
+            JOptionPane.showMessageDialog(this, "El usuario que intentas crear ya existe, intenta una nueva combinacion", "Error karnalitop", JOptionPane.ERROR_MESSAGE);
+        } else {
+            try {
+
+                archivo.createNewFile();
+                FileWriter fw = new FileWriter(archivo);
+                PrintWriter pw = new PrintWriter(fw);
+                pw.write(datos + "," + datos2 + "," + datos3);
+
+                fw.close();
+                pw.close();
+
+                JOptionPane.showMessageDialog(null, "Se ha creado su usuario correctamente", "Chuy Messenger", JOptionPane.INFORMATION_MESSAGE, new ImageIcon("src/pack/verde.png"));
+
+            } catch (IOException ex) {
+                JOptionPane.showMessageDialog(null, "Ha ocurrio un error al crear el nuevo usuario", "Chuy Messenger", JOptionPane.ERROR_MESSAGE, new ImageIcon("src/pack/tachado.png"));
+            }
+
+            setVisible(false);
+            Window a = new Window();
+            a.setVisible(true);
         }
-        setVisible(false);
-        Window a = new Window();
-        a.setVisible(true);
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
@@ -147,6 +168,8 @@ public class Create extends javax.swing.JFrame {
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JTextField name;
     private javax.swing.JTextField password;
     private javax.swing.JTextField usuario;
     // End of variables declaration//GEN-END:variables
