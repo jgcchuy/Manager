@@ -3,12 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/main.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Create.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Window.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Sesion.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/finish.java</file>
-            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/workStation.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/CrearUsuario.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Corte.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Index.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/ArrayVenta.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Menu.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/IniciarSesion.java</file>
+            <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Venta.java</file>
             <file>file:/C:/Users/USUARIO/Documents/NetBeansProjects/Manager/src/pack/Usuario.java</file>
         </group>
     </open-files>

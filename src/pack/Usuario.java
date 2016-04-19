@@ -15,5 +15,13 @@ public class Usuario {
         this.name = name;
     }
 
+    public String getName() {
+        return name;
+    }
 
+    public String getUserName(){
+        return user;
+    }
+    
+    
 }
